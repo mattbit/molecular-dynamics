@@ -1,0 +1,3 @@
+montecarlo/*.so
+montecarlo/*.o
+montecarlo/*.c
