@@ -8,17 +8,17 @@ r"""
     static double runSimulation(double delta, int num_steps, double q0)
     {
         int n;
-        double alfa, q, q2acc = 0;
+        double alpha, q, q2acc = 0;
 
         for (n = 0; n < num_steps; n++) {
             // generate a guess
             q = q0 + ((double)random()/RAND_MAX - 0.5) * delta;
 
             // acceptance probability
-            alfa = exp(-(pow(q, 2)/2));
+            alpha = exp(-0.5*(pow(q, 2)-pow(q0, 2)));
 
             // if move is accepted
-            if (alfa >= (double)random()/RAND_MAX) {
+            if (alpha >= (double)random()/RAND_MAX) {
                 q0 = q;
             }
 
